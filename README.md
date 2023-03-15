@@ -1,10 +1,11 @@
 ![tailwind-nextjs-banner](/public/static/images/twitter-card-two.png)
 
+[Deployed](https://nash-music-log.netlify.app/) 
 # Nashville Live Music Video Log
 
 This repository contains the source code for a Next.js web application that displays a log of live music performances in Nashville, TN. The log features videos of performances by various artists and bands, as well as information about the venues and events.
 
-The application uses a GraphQL API to retrieve data from Hygraph's Headless CMS, which serves as the content management system for the log. The application is deployed and hosted on Netlify, a cloud computing platform that offers web hosting and serverless backend services.
+The application uses a GraphQL API to retrieve data from Hygraph's Headless CMS, which serves as the content management system for the log. The application is deployed and hosted on Netlify, a cloud computing platform that empowers frontend engineers to build apps without extensive DevOps or backend involvement using Composable Architectureg.
 
 ## Getting Started
 
@@ -24,7 +25,11 @@ The application is built using the following technologies:
 
 ## Work in Progress
 
-Expect enhancements to get all tags functionality and cleaning up the hard-coded content functionality. We are essentially unconnecting the mdx blog posts and housing and creating them in Hygraph, making this a product that can be run by non-coders after initial launch.
+Expect enhancements:
+- Getting all tags functionality,
+- and cleaning up the hard-coded content functionality. 
+
+We are essentially unconnecting the mdx blog posts and housing and creating them in Hygraph, making this a product that can be run by non-coders after initial launch. Low code maintenance!
 
 ## Contributing
 

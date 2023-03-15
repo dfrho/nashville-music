@@ -16,7 +16,7 @@ To get started with the application, you can clone the repository to your local 
 
 This will install the required dependencies and start the development server. You can then open your web browser and navigate to `http://localhost:3000` to view the application.
 
-You will need a free Hygraph application duplicating the <b>post</b> schema you see in the GraphQL queries in `index.js` and `[slug].js`. Remember to have entries and publish them in your Hygraph dashboard. Use your GraphQL API Playground in Hygraph to test your queries.
+You will need a free Hygraph application duplicating the <b>post</b> schema you see in the GraphQL queries in `index.js` and `[slug].js`. Remember to have entries and publish them in your Hygraph dashboard. Use your GraphQL API Playground in Hygraph to test your queries. Adjust then endpoint in both instances to the <b>PUBLIC</b> API Hypgraph endpoint that is <b>READ ONLY</b>. 
 
 
 ## Technology Stack

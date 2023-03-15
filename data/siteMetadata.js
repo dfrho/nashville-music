@@ -8,7 +8,7 @@ const siteMetadata = {
   siteUrl: 'https://nash-music-log.netlify.app/',
   siteRepo: 'https://github.com/dfrho/nashville-music',
   siteLogo: '/static/images/logo-one.png',
-  image: '/static/images/avatar.png',
+  image: '/static/images/avatar-one.png',
   socialBanner: '/static/images/twitter-card-two.png',
   email: 'address@yoursite.com',
   github: 'https://github.com',

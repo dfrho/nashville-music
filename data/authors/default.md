@@ -1,16 +1,13 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+name: David Rhodes
+avatar: /static/images/avatar-one.jpg
+occupation: Customer-Facing Engineer
+company: TBD (Free Agent Currently)
+email: david@espressocode.tech
+linkedin: https://www.linkedin.com/in/rhodesdavid/
+github: https://github.com/dfrho/
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+David Rhodes is a customer-facing engineer with backgrounds in SaaS sales and enterprise frontend engineering. Curious about new tech and eager to build anything in JavaScript. Also passionate about Nashville and its inspiring local music scene.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Look him up on LinkedIn if you're coming to Nashville and he'll set you up with the best bars, restaurants, and tours. At least from the perspective of someone who moved from New York, Pittsburgh, and Memphis.

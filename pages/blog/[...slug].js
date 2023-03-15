@@ -92,11 +92,11 @@ export default function Blog({ post }) {
                 ></iframe>
               </div>
               <p>{content.text}</p>
-              <div className="flex flex-wrap">
+              {/* <div className="flex flex-wrap">
                 {tags.map((tag) => (
                   <Tag key={tag} text={tag} />
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

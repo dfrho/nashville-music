@@ -84,11 +84,11 @@ export default function Home({ posts }) {
                               src={youTubeUrl}
                             ></iframe>
                           </div>
-                          <div className="flex flex-wrap">
+                          {/* <div className="flex flex-wrap">
                             {tags.map((tag) => (
                               <Tag key={tag} text={tag} />
                             ))}
-                          </div>
+                          </div> */}
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
                           {summary}

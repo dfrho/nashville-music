@@ -1,9 +1,10 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
+// import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import { GraphQLClient, gql } from 'graphql-request'
+import styled from 'styled-components'
 
 const QUERY = gql`
   {
@@ -19,6 +20,28 @@ const QUERY = gql`
       nestedHtml
       youTubeUrl
       date
+    }
+  }
+`
+const YoutubeContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  max-width: 100%; /* ensure the container doesn't overflow on smaller screens */
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%; /* ensure the video maintains its aspect ratio on larger screens */
+
+    /* adjust the width and height for smaller screens */
+    @media (max-width: 767px) {
+      width: 100%;
+      height: 100%;
     }
   }
 `
@@ -75,15 +98,16 @@ export default function Home({ posts }) {
                               {title}
                             </Link>
                           </h2>
-                          <div>
+                          <YoutubeContainer>
                             <iframe
                               id="ytplayer"
                               type="text/html"
                               width="640"
                               height="360"
                               src={youTubeUrl}
+                              allowFullScreen
                             ></iframe>
-                          </div>
+                          </YoutubeContainer>
                           {/* <div className="flex flex-wrap">
                             {tags.map((tag) => (
                               <Tag key={tag} text={tag} />

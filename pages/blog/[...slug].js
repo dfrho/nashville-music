@@ -83,7 +83,7 @@ export default function Blog({ post }) {
                   {title}
                 </Link>
               </h2>
-              <div>
+              <div className="my-10">
                 <iframe
                   id="ytplayer"
                   type="text/html"

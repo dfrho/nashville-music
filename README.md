@@ -11,8 +11,13 @@ The application uses a GraphQL API to retrieve data from Hygraph's Headless CMS,
 
 To get started with the application, you can clone the repository to your local machine and run the following commands:
 
+`npm install`
+`npm start`
 
 This will install the required dependencies and start the development server. You can then open your web browser and navigate to `http://localhost:3000` to view the application.
+
+You will need a free Hygraph application duplicating the <b>post</b> schema you see in the GraphQL queries in `index.js` and `[slug].js`. Remember to have entries and publish them in your Hygraph dashboard. Use your GraphQL API Playground in Hygraph to test your queries.
+
 
 ## Technology Stack
 

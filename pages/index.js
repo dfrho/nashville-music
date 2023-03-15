@@ -19,6 +19,7 @@ const QUERY = gql`
       nestedHtml
       youTubeUrl
       date
+      excerpt
     }
   }
 `
@@ -74,7 +75,7 @@ export default function Home({ posts }) {
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags, youTubeUrl } = frontMatter
+            const { slug, date, title, summary, tags, excerpt, youTubeUrl } = frontMatter
 
             return (
               <li key={slug} className="py-12">
@@ -114,7 +115,7 @@ export default function Home({ posts }) {
                           </div> */}
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
+                          {excerpt}
                         </div>
                       </div>
                       <div className="text-base font-medium leading-6">

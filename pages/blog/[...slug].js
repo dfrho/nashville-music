@@ -49,6 +49,7 @@ const POSTQUERY = gql`
       tags
       content {
         text
+        html
       }
     }
   }
@@ -91,7 +92,7 @@ export default function Blog({ post }) {
                   src={youTubeUrl}
                 ></iframe>
               </div>
-              <p>{content.text}</p>
+              <div dangerouslySetInnerHTML={{ __html: content.html }} />
               {/* <div className="flex flex-wrap">
                 {tags.map((tag) => (
                   <Tag key={tag} text={tag} />

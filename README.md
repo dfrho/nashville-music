@@ -5,7 +5,7 @@
 
 This repository contains the source code for a Next.js web application that displays a log of live music performances in Nashville, TN. The log features videos of performances by various artists and bands, as well as information about the venues and events.
 
-The application uses a GraphQL API to retrieve data from Hygraph's Headless CMS, which serves as the content management system for the log. The application is deployed and hosted on Netlify, a cloud computing platform that empowers frontend engineers to build apps without extensive DevOps or backend involvement using Composable Architectureg.
+The application uses a GraphQL API to retrieve data from Hygraph's Headless CMS, which serves as the content management system for the log. The application is deployed and hosted on Netlify, a cloud computing platform that empowers frontend engineers to build apps without extensive DevOps or backend involvement using Composable Architecture.
 
 ## Getting Started
 

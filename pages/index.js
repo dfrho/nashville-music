@@ -23,7 +23,7 @@ const QUERY = gql`
     }
   }
 `
-const YoutubeContainer = styled.div`
+export const YoutubeContainer = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;

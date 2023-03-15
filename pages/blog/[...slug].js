@@ -1,7 +1,7 @@
 import Link from '@/components/Link'
 import formatDate from '@/lib/utils/formatDate'
 import { GraphQLClient, gql } from 'graphql-request'
-import Tag from '../../components/Tag'
+import { YoutubeContainer } from '../index'
 
 const QUERY = gql`
   query AllPosts {
@@ -84,13 +84,15 @@ export default function Blog({ post }) {
                 </Link>
               </h2>
               <div className="my-10">
-                <iframe
-                  id="ytplayer"
-                  type="text/html"
-                  width="640"
-                  height="360"
-                  src={youTubeUrl}
-                ></iframe>
+                <YoutubeContainer>
+                  <iframe
+                    id="ytplayer"
+                    type="text/html"
+                    width="640"
+                    height="360"
+                    src={youTubeUrl}
+                  ></iframe>
+                </YoutubeContainer>
               </div>
               <div dangerouslySetInnerHTML={{ __html: content.html }} />
               {/* <div className="flex flex-wrap">

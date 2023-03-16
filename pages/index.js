@@ -4,6 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import { GraphQLClient, gql } from 'graphql-request'
 import styled from 'styled-components'
+import sortByDate from '../lib/sortByDate'
 
 const QUERY = gql`
   {
@@ -45,9 +46,6 @@ export const YoutubeContainer = styled.div`
     }
   }
 `
-
-// import NewsletterForm from '@/components/NewsletterForm'
-
 const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
@@ -55,8 +53,8 @@ export async function getStaticProps() {
     'https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clf8fl33302ow01umha9250xr/master'
   )
   const { posts } = await hygraph.request(QUERY)
-
-  return { props: { posts } }
+  const sortedPosts = sortByDate(posts)
+  return { props: { posts: sortedPosts } }
 }
 
 export default function Home({ posts }) {

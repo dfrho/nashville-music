@@ -2,6 +2,7 @@ import Link from '@/components/Link'
 import formatDate from '@/lib/utils/formatDate'
 import { GraphQLClient, gql } from 'graphql-request'
 import { YoutubeContainer } from '../index'
+import DOMPurify from 'isomorphic-dompurify'
 
 const QUERY = gql`
   query AllPosts {
@@ -94,7 +95,7 @@ export default function Blog({ post }) {
                   ></iframe>
                 </YoutubeContainer>
               </div>
-              <div dangerouslySetInnerHTML={{ __html: content.html }} />
+              <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.html) }} />
               {/* <div className="flex flex-wrap">
                 {tags.map((tag) => (
                   <Tag key={tag} text={tag} />

@@ -16,7 +16,7 @@ class MyDocument extends Document {
         </Head>
         <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
           <Main />
-          <NextScript />
+          <NextScript src="/src/purify.js" />
         </body>
       </Html>
     )

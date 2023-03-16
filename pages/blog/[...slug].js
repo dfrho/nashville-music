@@ -49,7 +49,6 @@ const POSTQUERY = gql`
       id
       tags
       content {
-        text
         html
       }
     }
@@ -66,6 +65,11 @@ export async function getStaticProps({ params }) {
 
 export default function Blog({ post }) {
   const { slug, date, title, tags, youTubeUrl, content } = post
+  DOMPurify.addHook('afterSanitizeAttributes', function (node) {
+    if (node.nodeName.toLowerCase() === 'a') {
+      node.setAttribute('target', '_blank')
+    }
+  })
 
   return (
     <article>

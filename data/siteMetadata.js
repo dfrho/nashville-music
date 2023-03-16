@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'NashMusic',
   author: 'David Rhodes',
   headerTitle: 'NashMusic',
-  description: 'A video blog of music I encounter in Nashville',
+  description: 'A video blog of music encountered living in Nashville',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://nash-music-log.netlify.app/',

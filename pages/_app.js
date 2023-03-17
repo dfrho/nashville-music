@@ -22,8 +22,8 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     const cookie = getCookieValue('myAwesomeNashVegasCookie2')
-    if (typeof cookie === 'boolean') {
-      setCookieValue(cookie)
+    if (cookie === 'true' || cookie === 'false') {
+      setCookieValue(cookie.toBoolean())
     }
   }, [cookieValue])
 

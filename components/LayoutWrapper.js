@@ -6,6 +6,7 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import CookieConsent from 'react-cookie-consent'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -45,6 +46,18 @@ const LayoutWrapper = ({ children }) => {
           </div>
         </header>
         <main className="mb-auto">{children}</main>
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          cookieName="myAwesomeNashVegasCookie2"
+          style={{ background: '#2B373B' }}
+          buttonStyle={{ color: '#3671B6', fontSize: '13px' }}
+          expires={150}
+        >
+          This website uses cookies to enhance the user experience, as well as analytics that
+          captures screen clicks and mouse movements
+          <span style={{ fontSize: '10px' }}>That is all we track. Enjoy the music 🤠</span>
+        </CookieConsent>
         <Footer />
       </div>
     </SectionContainer>

@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
           declineButtonStyle={{ color: '#fff', background: 'green', fontSize: '13px' }}
           location="bottom"
           declineButtonText="Nope"
-          buttonText="I'm Down"
+          buttonText="OK Got It"
           cookieName="myAwesomeNashVegasCookie2"
           style={{ background: '#3671B6', display: 'flex', alignItems: 'center' }}
           buttonStyle={{ color: '#fff', background: 'green', fontSize: '13px' }}

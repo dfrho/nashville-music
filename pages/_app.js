@@ -18,7 +18,8 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
-  const [cookieValue, setCookieValue] = useState(false)
+  const [cookieValue, setCookieValue] = useState('false')
+
   const cookie = getCookieValue('myAwesomeNashVegasCookie2')
   useEffect(() => {
     const insideCookie = getCookieValue('myAwesomeNashVegasCookie2')
@@ -43,7 +44,7 @@ export default function App({ Component, pageProps }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
-      {cookieValue && <Analytics />}
+      {cookieValue === 'true' && <Analytics />}
       <LayoutWrapper>
         <Component {...pageProps} />
         <CookieConsent

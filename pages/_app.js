@@ -19,13 +19,12 @@ const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
   const [cookieValue, setCookieValue] = useState(false)
-
+  const cookie = getCookieValue('myAwesomeNashVegasCookie2')
   useEffect(() => {
-    const cookie = getCookieValue('myAwesomeNashVegasCookie2')
     if (cookie === 'true' || cookie === 'false') {
       setCookieValue(Boolean(cookie))
     }
-  }, [])
+  }, [cookie])
 
   function getCookieValue(name) {
     const value = `; ${document.cookie}`

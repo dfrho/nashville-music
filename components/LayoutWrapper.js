@@ -50,12 +50,13 @@ const LayoutWrapper = ({ children }) => {
           location="bottom"
           buttonText="Accept"
           cookieName="myAwesomeNashVegasCookie2"
-          style={{ background: '#3671B6' }}
+          style={{ background: '#3671B6', display: 'flex', justifyContent: 'center' }}
           buttonStyle={{ color: '#fff', fontSize: '13px' }}
           expires={150}
         >
           This website uses cookies to enhance the user experience, as well as analytics that
-          captures screen clicks and mouse movements. That is all we track. Enjoy the music 🤠.
+          capture screen clicks and mouse movements (Open-Source: PostHog). That is all we track.
+          Enjoy the music 🤠.
         </CookieConsent>
         <Footer />
       </div>

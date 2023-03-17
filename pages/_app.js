@@ -25,7 +25,6 @@ export default function App({ Component, pageProps }) {
     if (cookie) {
       setCookieValue(cookie)
     }
-    console.log('🚀 ~ file: _app.js:26 ~ useEffect ~ cookieValue:', cookieValue)
   }, [cookieValue])
 
   function getCookieValue(name) {

@@ -21,12 +21,17 @@ export default function App({ Component, pageProps }) {
   const [cookieValue, setCookieValue] = useState(false)
   const cookie = getCookieValue('myAwesomeNashVegasCookie2')
   useEffect(() => {
-    if (cookie === 'true' || cookie === 'false') {
-      setCookieValue(Boolean(cookie))
+    const insideCookie = getCookieValue('myAwesomeNashVegasCookie2')
+    if (insideCookie === 'true' || insideCookie === 'false') {
+      setCookieValue(Boolean(insideCookie))
     }
   }, [cookie])
 
   function getCookieValue(name) {
+    if (typeof window === 'undefined') {
+      return null // Return null on the server-side
+    }
+
     const value = `; ${document.cookie}`
     const parts = value.split(`; ${name}=`)
     if (parts.length === 2) return parts.pop().split(';').shift()

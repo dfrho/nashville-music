@@ -20,13 +20,14 @@ const isSocket = process.env.SOCKET
 export default function App({ Component, pageProps }) {
   const [cookieValue, setCookieValue] = useState('false')
 
-  const cookie = getCookieValue('myAwesomeNashVegasCookie2')
+  // useEffect will run on the client-side only, and only on mount given no dependencies
+  // so user is only prompted once
   useEffect(() => {
-    const insideCookie = getCookieValue('myAwesomeNashVegasCookie2')
-    if (insideCookie === 'true' || insideCookie === 'false') {
-      setCookieValue(insideCookie)
+    const cookie = getCookieValue('myAwesomeNashVegasCookie2')
+    if (cookie === 'true' || cookie === 'false') {
+      setCookieValue(cookie)
     }
-  }, [cookie])
+  }, [])
 
   function getCookieValue(name) {
     if (typeof window === 'undefined') {
@@ -38,6 +39,9 @@ export default function App({ Component, pageProps }) {
     if (parts.length === 2) return parts.pop().split(';').shift()
   }
 
+  // CookieConsent is a component that will show a cookie consent banner and has a callback for onAccept and onDecline
+  // so we will reset state on either of those events, triggering a re-render that will turn on or turn off analytics:
+
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
@@ -48,6 +52,12 @@ export default function App({ Component, pageProps }) {
       <LayoutWrapper>
         <Component {...pageProps} />
         <CookieConsent
+          onAccept={() => {
+            setCookieValue('true')
+          }}
+          onDecline={() => {
+            setCookieValue('false')
+          }}
           enableDeclineButton
           declineButtonStyle={{ color: '#fff', background: 'green', fontSize: '13px' }}
           location="bottom"

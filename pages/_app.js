@@ -23,9 +23,10 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const cookie = getCookieValue('myAwesomeNashVegasCookie2')
     if (cookie) {
-      setCookieValue(cookie === 'true')
+      setCookieValue(cookie)
     }
-  }, [])
+    console.log('🚀 ~ file: _app.js:26 ~ useEffect ~ cookieValue:', cookieValue)
+  }, [cookieValue])
 
   function getCookieValue(name) {
     const value = `; ${document.cookie}`
@@ -33,7 +34,6 @@ export default function App({ Component, pageProps }) {
     if (parts.length === 2) return parts.pop().split(';').shift()
   }
 
-  // console.log('cookieValue', cookieValue)
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>

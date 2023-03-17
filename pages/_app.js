@@ -4,7 +4,7 @@ import 'katex/dist/katex.css'
 
 import '@fontsource/inter/variable-full.css'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 
@@ -18,24 +18,33 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
-  const [isTracking, setIsTracking] = useState(false)
+  const [cookieValue, setCookieValue] = useState(false)
+
+  useEffect(() => {
+    const cookie = getCookieValue('myAwesomeNashVegasCookie2')
+    if (cookie) {
+      setCookieValue(cookie === 'true')
+    }
+  }, [])
+
+  function getCookieValue(name) {
+    const value = `; ${document.cookie}`
+    const parts = value.split(`; ${name}=`)
+    if (parts.length === 2) return parts.pop().split(';').shift()
+  }
+
+  // console.log('cookieValue', cookieValue)
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
-      <Analytics />
+      {cookieValue && <Analytics />}
       <LayoutWrapper>
         <Component {...pageProps} />
         <CookieConsent
           enableDeclineButton
-          onDecline={() => {
-            setIsTracking(false)
-          }}
-          onAccept={() => {
-            setIsTracking(true)
-          }}
           declineButtonStyle={{ color: '#fff', background: 'green', fontSize: '13px' }}
           location="bottom"
           declineButtonText="Nope"

@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
     if (cookie === 'true' || cookie === 'false') {
       setCookieValue(Boolean(cookie))
     }
-  }, [cookieValue])
+  }, [])
 
   function getCookieValue(name) {
     const value = `; ${document.cookie}`

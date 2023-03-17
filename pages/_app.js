@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     const cookie = getCookieValue('myAwesomeNashVegasCookie2')
-    if (cookie) {
+    if (typeof cookie === 'boolean') {
       setCookieValue(cookie)
     }
   }, [cookieValue])

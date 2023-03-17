@@ -2,7 +2,7 @@
 name: David Rhodes
 avatar: /static/images/avatar-one.jpg
 occupation: Customer-Facing Engineer
-company: TBD (Free Agent Currently)
+company: Free Agent Currently
 email: david@espressocode.tech
 linkedin: https://www.linkedin.com/in/rhodesdavid/
 github: https://github.com/dfrho/

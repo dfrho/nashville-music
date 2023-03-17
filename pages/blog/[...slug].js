@@ -100,11 +100,6 @@ export default function Blog({ post }) {
                 </YoutubeContainer>
               </div>
               <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.html) }} />
-              {/* <div className="flex flex-wrap">
-                {tags.map((tag) => (
-                  <Tag key={tag} text={tag} />
-                ))}
-              </div> */}
             </div>
           </div>
         </div>

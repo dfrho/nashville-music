@@ -106,11 +106,6 @@ export default function Home({ posts }) {
                               allowFullScreen
                             ></iframe>
                           </YoutubeContainer>
-                          {/* <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div> */}
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
                           {excerpt}

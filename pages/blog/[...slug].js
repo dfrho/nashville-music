@@ -4,20 +4,10 @@ import { GraphQLClient, gql } from 'graphql-request'
 import { YoutubeContainer } from '../index'
 import DOMPurify from 'isomorphic-dompurify'
 
-const QUERY = gql`
+const ALLPOSTSQUERY = gql`
   query AllPosts {
     posts {
       slug
-      tags
-      title
-      content {
-        html
-        text
-        raw
-      }
-      nestedHtml
-      youTubeUrl
-      date
     }
   }
 `
@@ -26,7 +16,7 @@ export async function getStaticPaths() {
   const hygraph = new GraphQLClient(
     'https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clf8fl33302ow01umha9250xr/master'
   )
-  const { posts } = await hygraph.request(QUERY)
+  const { posts } = await hygraph.request(ALLPOSTSQUERY)
 
   let routes = posts.map((p) => {
     const params = `/blog/${p.slug}`
@@ -43,11 +33,9 @@ const POSTQUERY = gql`
         name
       }
       date
-      nestedHtml
       title
       youTubeUrl
       id
-      tags
       content {
         html
       }

@@ -3,8 +3,9 @@ import formatDate from '@/lib/utils/formatDate'
 import { GraphQLClient, gql } from 'graphql-request'
 import { YoutubeContainer } from '../index'
 import DOMPurify from 'isomorphic-dompurify'
-import PageSEO from '@/components/SEO'
+import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
+import hygraph from '../../hygraph'
 
 const ALLPOSTSQUERY = gql`
   query AllPosts {
@@ -15,9 +16,6 @@ const ALLPOSTSQUERY = gql`
 `
 
 export async function getStaticPaths() {
-  const hygraph = new GraphQLClient(
-    'https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clf8fl33302ow01umha9250xr/master'
-  )
   const { posts } = await hygraph.request(ALLPOSTSQUERY)
 
   let routes = posts.map((p) => {
@@ -63,7 +61,11 @@ export default function Blog({ post }) {
 
   return (
     <>
-      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <PageSEO
+        title={title}
+        description={content.html}
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+      />
       <article>
         <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
           <dl>

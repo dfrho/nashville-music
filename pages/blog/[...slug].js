@@ -3,7 +3,7 @@ import formatDate from '@/lib/utils/formatDate'
 import { GraphQLClient, gql } from 'graphql-request'
 import { YoutubeContainer } from '../index'
 import DOMPurify from 'isomorphic-dompurify'
-import PageSEO from '@/components/PageSEO'
+import PageSEO from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 
 const ALLPOSTSQUERY = gql`

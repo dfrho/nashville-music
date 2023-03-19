@@ -64,7 +64,6 @@ export default function Blog({ post }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-
       <article>
         <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
           <dl>
